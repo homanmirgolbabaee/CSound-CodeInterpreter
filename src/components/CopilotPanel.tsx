@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 
 interface CopilotPanelProps {
@@ -63,9 +64,9 @@ const CopilotPanel: React.FC<CopilotPanelProps> = ({ fileName }) => {
         <h3 className="text-sm font-medium text-vscode-text">Copilot Suggestions</h3>
         <div className="flex items-center">
           <img 
-            src="/csc-logo.png" 
+            src="/lovable-uploads/50759de6-13dd-49f0-ab44-67b39314456f.png" 
             alt="CSC Logo" 
-            className="h-6 w-auto"
+            className="h-8 w-auto object-contain" 
           />
         </div>
       </div>
