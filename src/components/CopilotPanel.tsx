@@ -62,7 +62,7 @@ const CopilotPanel: React.FC<CopilotPanelProps> = ({ fileName }) => {
     <div className="w-72 bg-vscode-panel border-l border-vscode-sidebar overflow-hidden flex flex-col">
       <div className="p-3 border-b border-vscode-sidebar flex justify-between items-center">
         <h3 className="text-sm font-medium text-vscode-text">Copilot Suggestions</h3>
-        <div className="flex items-center">
+        <div className="flex items-center bg-vscode-sidebar/20 rounded-lg p-2">
           <img 
             src="/lovable-uploads/0a03420b-6e3d-4466-bab4-ab0028f8e5f9.png" 
             alt="CSC Logo" 
