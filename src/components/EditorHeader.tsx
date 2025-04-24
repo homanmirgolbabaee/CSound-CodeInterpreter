@@ -2,8 +2,8 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { 
-  layout-panel-left as LayoutPanelLeft, 
-  layout-panel-right as LayoutPanelRight 
+  LayoutPanelLeft,
+  LayoutPanelRight
 } from 'lucide-react';
 
 interface EditorHeaderProps {
