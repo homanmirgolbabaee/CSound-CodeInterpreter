@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 
 interface CopilotPanelProps {
@@ -9,11 +8,9 @@ const CopilotPanel: React.FC<CopilotPanelProps> = ({ fileName }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [suggestions, setSuggestions] = useState<string[]>([]);
 
-  // Generate realistic sample suggestions based on the file
   useEffect(() => {
     setIsLoading(true);
     
-    // Simulate API delay
     const timer = setTimeout(() => {
       let newSuggestions: string[] = [];
       
@@ -64,7 +61,13 @@ const CopilotPanel: React.FC<CopilotPanelProps> = ({ fileName }) => {
     <div className="w-72 bg-vscode-panel border-l border-vscode-sidebar overflow-hidden flex flex-col">
       <div className="p-3 border-b border-vscode-sidebar flex justify-between items-center">
         <h3 className="text-sm font-medium text-vscode-text">Copilot Suggestions</h3>
-        <span className="text-xs px-2 py-1 bg-vscode-highlight rounded-full text-white">AI</span>
+        <div className="flex items-center">
+          <img 
+            src="/csc-logo.png" 
+            alt="CSC Logo" 
+            className="h-6 w-auto"
+          />
+        </div>
       </div>
       
       <div className="flex-1 overflow-y-auto p-4">
