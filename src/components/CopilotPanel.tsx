@@ -64,9 +64,9 @@ const CopilotPanel: React.FC<CopilotPanelProps> = ({ fileName }) => {
         <h3 className="text-sm font-medium text-vscode-text">Copilot Suggestions</h3>
         <div className="flex items-center">
           <img 
-            src="/lovable-uploads/50759de6-13dd-49f0-ab44-67b39314456f.png" 
+            src="/lovable-uploads/0a03420b-6e3d-4466-bab4-ab0028f8e5f9.png" 
             alt="CSC Logo" 
-            className="h-8 w-auto object-contain" 
+            className="h-10 w-auto object-contain" 
           />
         </div>
       </div>
