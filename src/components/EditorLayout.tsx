@@ -5,13 +5,20 @@ import CodeEditor from './CodeEditor';
 import CopilotPanel from './CopilotPanel';
 import EditorHeader from './EditorHeader';
 
+// Define the FileItem type to match the expected structure
+interface FileItem {
+  name: string;
+  type: 'file' | 'folder';
+  children?: FileItem[];
+}
+
 const EditorLayout: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isPanelOpen, setIsPanelOpen] = useState(true);
   const [activeFile, setActiveFile] = useState('index.js');
   
-  // Sample files structure for the explorer
-  const files = [
+  // Sample files structure for the explorer with proper typing
+  const files: FileItem[] = [
     { name: 'index.js', type: 'file' },
     { name: 'styles.css', type: 'file' },
     { name: 'components', type: 'folder', children: [

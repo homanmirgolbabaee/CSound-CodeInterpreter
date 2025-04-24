@@ -2,8 +2,8 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { 
-  LayoutPanelLeft,
-  LayoutPanelRight
+  PanelLeft,
+  PanelRight
 } from 'lucide-react';
 
 interface EditorHeaderProps {
@@ -21,7 +21,7 @@ const EditorHeader: React.FC<EditorHeaderProps> = ({ toggleSidebar, togglePanel,
         size="icon" 
         className="text-vscode-text hover:bg-vscode-panel"
       >
-        <LayoutPanelLeft size={18} />
+        <PanelLeft size={18} />
       </Button>
       
       <div className="flex-1 mx-2 px-2 py-1">
@@ -34,7 +34,7 @@ const EditorHeader: React.FC<EditorHeaderProps> = ({ toggleSidebar, togglePanel,
         size="icon" 
         className="text-vscode-text hover:bg-vscode-panel"
       >
-        <LayoutPanelRight size={18} />
+        <PanelRight size={18} />
       </Button>
     </div>
   );
