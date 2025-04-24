@@ -1,6 +1,9 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @layer base {
   :root {
@@ -35,20 +38,26 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* VSCode Theme Colors */
+    --vscode-bg: 0 0% 12%;
+    --vscode-sidebar: 0 0% 15%;
+    --vscode-panel: 0 0% 17%;
+    --vscode-highlight: 210 100% 42%;
+    --vscode-text: 0 0% 86%;
+    --vscode-comment: 0 0% 56%;
+    --vscode-keyword: 207 90% 61%;
+    --vscode-string: 68 80% 56%;
+    --vscode-function: 35 90% 55%;
+    --vscode-variable: 200 100% 70%;
+    --vscode-selection: 210 100% 20%;
   }
 
   .dark {
@@ -79,14 +88,6 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -97,5 +98,58 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
   }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom scrollbar for code editor */
+.code-editor::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.code-editor::-webkit-scrollbar-track {
+  background: hsl(var(--vscode-bg));
+}
+
+.code-editor::-webkit-scrollbar-thumb {
+  background: hsl(var(--vscode-panel));
+  border-radius: 4px;
+}
+
+.code-editor::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--vscode-sidebar));
+}
+
+/* Line numbers styling */
+.line-numbers {
+  @apply select-none text-right pr-3 text-opacity-50;
+  color: hsl(var(--vscode-comment));
+  user-select: none;
+}
+
+/* Syntax highlighting classes */
+.token.keyword {
+  color: hsl(var(--vscode-keyword));
+}
+
+.token.string {
+  color: hsl(var(--vscode-string));
+}
+
+.token.function {
+  color: hsl(var(--vscode-function));
+}
+
+.token.comment {
+  color: hsl(var(--vscode-comment));
+  font-style: italic;
+}
+
+.token.variable {
+  color: hsl(var(--vscode-variable));
 }
