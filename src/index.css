@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -46,11 +45,11 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* VSCode Theme Colors */
-    --vscode-bg: 0 0% 12%;
-    --vscode-sidebar: 0 0% 15%;
-    --vscode-panel: 0 0% 17%;
-    --vscode-highlight: 210 100% 42%;
+    /* VSCode Theme Colors - Dark theme colors by default */
+    --vscode-bg: 220 13% 12%;
+    --vscode-sidebar: 220 13% 15%;
+    --vscode-panel: 220 13% 17%;
+    --vscode-highlight: 210 100% 50%;
     --vscode-text: 0 0% 86%;
     --vscode-comment: 0 0% 56%;
     --vscode-keyword: 207 90% 61%;
@@ -152,4 +151,55 @@
 
 .token.variable {
   color: hsl(var(--vscode-variable));
+}
+
+/* Enhanced cursor styles */
+.cursor-line {
+  position: relative;
+}
+
+.cursor-line::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background-color: hsl(var(--vscode-highlight));
+}
+
+/* Line highlight for active line */
+.line-highlight {
+  background-color: hsla(var(--vscode-selection), 0.3);
+}
+
+/* Animation for the Copilot typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.typing-animation {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid hsl(var(--vscode-highlight));
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: hsl(var(--vscode-highlight)) }
+}
+
+/* Improve VSCode panel aesthetics */
+.vscode-panel {
+  border-left: 1px solid hsla(var(--vscode-sidebar), 0.8);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Improve file explorer hover states */
+.explorer-item:hover {
+  background-color: hsla(var(--vscode-selection), 0.2);
 }
